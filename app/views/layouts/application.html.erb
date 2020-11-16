@@ -7,11 +7,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/16d2250538.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+  <header class="p-1">
+        <nav class="nav">
+            <span class="nav-logo">INFOX</span>
+            <div class="nav-links">
+                <%if user_signed_in?%>
+                    <a href="#"><i class="fas fa-plus"></i> WRITE AN ARTICLE</a>
+                <%end%>
+            </div>
+            <div class="nav-login">
+                <table>
+                    <tr>
+                    <%if user_signed_in?%>
+                        <td><%=current_user.username.capitalize%></td>
+                        <td>
+                        <%=link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "link"%>
+                        </td>
+                    <%else%>
+                        <td><%=link_to "LOGIN", new_user_session_path, class: "link"%></td> 
+                        <td><%=link_to "REGISTER", new_user_registration_path, class: "link"%></td> 
+                    <%end%>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
