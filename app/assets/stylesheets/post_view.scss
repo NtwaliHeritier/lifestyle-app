@@ -1,0 +1,21 @@
+.post-section {
+    max-width: 90%;
+    min-width: 90%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    .img-div {
+        height: 30%;
+    }
+    .img {
+        width: 40% !important;
+    }
+    p {
+        width: 100%;
+    }
+}
+
+.votes {
+    width: 7%;
+}

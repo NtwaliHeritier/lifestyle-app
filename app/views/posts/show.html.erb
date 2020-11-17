@@ -1,0 +1,19 @@
+<main>
+    <section class="post-section">
+        <%unless @post.image.nil?%>
+            <div class="img-div">
+                <%=image_tag(@post.image, class: "img")%>
+            </div>
+        <%end%>
+        <div class="mt-5">
+            <div class="d-flex justify-content-between px-5">
+                <span>By <%=@post.user.username%></span>
+                <div class="d-flex justify-content-between votes">
+                    <span><i class="fas fa-thumbs-up"></i></span>
+                    <span>90 votes</span>
+                </div>
+            </div>
+            <p class="mt-4"><%=@post.body%></p>
+        </div>
+    </section>
+</main>
