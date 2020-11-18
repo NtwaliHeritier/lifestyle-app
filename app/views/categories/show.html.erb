@@ -2,7 +2,7 @@
         <%i=1%>
           <%@category.posts.each do |post|%>
             <div class="item">
-            <img src="<%=url_for(post.image)%>" class=<%="order-2" if i%4==3 || i%4==0%> alt="">
+            <img src="<%=post.image%>" class=<%="order-2" if i%4==3 || i%4==0%> alt="">
             <div class="item-content p-2 <%="order-1" if i%4==3 || i%4==0%>">
                 <span class="category"><%=@category.name%></span>
                 <span class="title"><%=post.title%></span>

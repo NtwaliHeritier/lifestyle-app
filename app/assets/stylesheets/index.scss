@@ -66,12 +66,13 @@ td {
             border-bottom: 4px solid $color1;
         }
         p {
-            padding: 0 5px;
+            padding: 0;
             position: absolute;
             color: white;
             top: 70%;
             text-align: center;
-            left: 12%;
+            left: 9%;
+            font-size: 14px;
         } 
     }
 }
@@ -79,6 +80,9 @@ td {
 @media screen and (max-width: 1199px) {
     .category {
         width: 33.3% !important;
+    }
+    p {
+        font-size: 12px;
     }
 }
 
@@ -88,7 +92,6 @@ td {
     }
     .most-voted-content {
         top: 50% !important;
-        font-size: 12px;
     }
 }
 
@@ -97,8 +100,7 @@ td {
         width: 50% !important;
     }
     .most-voted-content {
-        top: 60% !important;
-        font-size: 12px;
+        top: 55% !important;
     }
 }
 

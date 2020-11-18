@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
   has_many :post_categories
   has_many :categories, through: :post_categories
   has_many :votes
+  mount_uploader :image, ImageUploader
 
   def category; end
 
