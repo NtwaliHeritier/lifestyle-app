@@ -39,5 +39,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-
-.env
+# Ignore application configuration
+/config/application.yml
