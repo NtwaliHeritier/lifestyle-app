@@ -6,16 +6,24 @@
     flex-direction: column;
     align-items: center;
     .img-div {
-        height: 30%;
-    }
-    .img {
-        width: 40% !important;
+        display: flex;
+        justify-content: center;
     }
     p {
         width: 100%;
     }
 }
 
+.post-flex, .post-flex .user {
+    min-width: 100%;
+    max-width: 100%;
+}
+
 .votes {
-    width: 7%;
+    width: 8%;
+    .save-button {
+        border: none;
+        cursor: pointer;
+        background-color: white;
+    }
 }

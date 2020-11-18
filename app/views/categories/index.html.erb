@@ -1,0 +1,20 @@
+<main>
+        <section class="most-voted">
+            <img src="<%=url_for(@voted_post.image)%>" alt="">
+            <div class="most-voted-content">
+                <h5 class="font-weight-bold"><%=@voted_post.title%></h5>
+            </div>
+        </section>
+        
+        <section class="categories">
+            <%@categories.each do |category|%>
+            <div class="category">
+                <%if category.posts.exists?%>
+                    <img src="<%=url_for(category.posts.first.image)%>" alt="">
+                    <h6 class="text-white pb-1 font-weight-bold"><%=category.name%></h6>
+                    <p class="font-weight-bold bg-dark"><%=category.posts.first.title%></p>
+                <%end%>
+            </div>
+            <%end%>
+        </section>
+    </main>

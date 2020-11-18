@@ -7,13 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/16d2250538.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="d-flex flex-column min-vh-100">
   <header class="px-2">
         <nav class="nav">
-            <span class="nav-logo">INFOX</span>
+            <span class="nav-logo">
+            <%=link_to "INFOX", root_path%>
+            </span>
             <div class="nav-links">
                 <%if user_signed_in?%>
                     <div class="dropdown show">

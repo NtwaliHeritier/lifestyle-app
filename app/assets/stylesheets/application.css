@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require bootstrap
  *= require_tree .
  *= require_self
@@ -22,7 +23,6 @@
     font-family: 'Roboto', sans-serif;
     color: black;
 }
-
 
 .nav {
     display: flex;
@@ -46,12 +46,12 @@
   }
 
   i {
-    color: rgba(77, 66, 60);
+    color: rgb(77, 66, 60);
     font-weight: bolder;
   }
 
   .link, .link:hover {
     font-weight: bolder;
-    color: rgba(77, 66, 60)
+    color: rgb(77, 66, 60)
   }
   
