@@ -1,0 +1,53 @@
+@mixin flexing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+$color1: #da5401;
+
+.category-item {
+    display: flex; 
+    flex-wrap: wrap;
+    h5 {
+        color: $color1;
+    }
+}
+
+.item {
+    display: flex;
+    width: 50%;
+    height: 250px;
+img {
+    width: 50%;
+}
+}
+
+.item-content {
+    .category, .author {
+        color: $color1;
+    }
+
+    .category {
+        border-bottom: 1px solid $color1;
+    }
+
+    .title {
+        padding: 5px 0;
+        display: block;
+        font-weight: bold;
+    }
+}
+
+.social-media {
+   @include flexing();
+}
+
+.social-media-icon {
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: $color1;
+    @include flexing();
+ }

@@ -2,7 +2,7 @@
         <section class="most-voted">
             <img src="<%=url_for(@voted_post.image)%>" alt="">
             <div class="most-voted-content">
-                <h5 class="font-weight-bold"><%=@voted_post.title%></h5>
+                <h5 class="font-weight-bold text-white bg-dark"><%=@voted_post.title%></h5>
             </div>
         </section>
         
@@ -10,9 +10,11 @@
             <%@categories.each do |category|%>
             <div class="category">
                 <%if category.posts.exists?%>
-                    <img src="<%=url_for(category.posts.first.image)%>" alt="">
-                    <h6 class="text-white pb-1 font-weight-bold"><%=category.name%></h6>
-                    <p class="font-weight-bold bg-dark"><%=category.posts.first.title%></p>
+                    <%=link_to category_path(category) do%>
+                        <img src="<%=url_for(category.posts.first.image)%>" alt="">
+                        <h6 class="text-white pb-1 font-weight-bold"><%=category.name%></h6>
+                        <p class="font-weight-bold bg-dark"><%=category.posts.first.title%></p>
+                    <%end%>
                 <%end%>
             </div>
             <%end%>

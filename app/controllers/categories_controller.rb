@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     
     def create
         @category = Category.new(create_params)
-        @category.name=params[:category][:name].capitalize
+        @category.name = params[:category][:name].capitalize
         if @category.save
             redirect_to root_path
         else
@@ -17,6 +17,10 @@ class CategoriesController < ApplicationController
         @categories = Category.all
         @voted_post = Post.includes(:votes).max
 
+    end
+
+    def show
+        @category = Category.find(params[:id])
     end
 
     private
