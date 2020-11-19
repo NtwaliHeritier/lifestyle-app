@@ -7,11 +7,13 @@
             <div class="d-flex justify-content-between user px-5">
                 <span>By <%=@post.user.username.capitalize%></span>
                 <div class="d-flex justify-content-between votes">
-                    <%= form_for(@vote) do |f|%>
+                    <%unless Vote.post_vote(@post, current_user).exists?%>
+                        <%= form_for(@vote) do |f|%>
                         <%=f.hidden_field(:post_id, value: @post.id)%>
                         <%=f.hidden_field(:post, value: @post)%>
                         <%=f.button "submit", class: "save-button" do%>
                             <%=fa_icon("thumbs-up")%>
+                        <%end%>
                         <%end%>
                     <%end%>
                     <span><%=@post.votes.size%> <%=check_votes(@post.votes.size)%></span>
