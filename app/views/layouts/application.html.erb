@@ -30,6 +30,17 @@
                             <%=link_to "New category", new_category_path, class: "dropdown-item"%>
                         </div>
                         </div>
+                        <div class="dropdown show">
+                        <a class="dropdown-toggle link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CATEGORIES
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <%Category.all.each do |category|%>
+                                <%=link_to category.name, category_path(category), class: "dropdown-item"%>
+                            <%end%>
+                        </div>
+                        </div>
                 <%end%>
             </div>
             <div class="nav-login">

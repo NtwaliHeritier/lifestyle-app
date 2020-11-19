@@ -37,6 +37,12 @@
     font-weight: bolder;
     color: #4d423c;
   }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 18%;
+  }
   
   td {
     padding: 0 5px;
@@ -54,4 +60,11 @@
     font-weight: bolder;
     color: rgb(77, 66, 60)
   }
-  
+
+  @media screen and (max-width: 1199px) {
+    .nav {
+      font-size: 13px;
+    }
+}
+
+

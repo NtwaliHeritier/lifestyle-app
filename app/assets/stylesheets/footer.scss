@@ -49,3 +49,12 @@ footer {
     background-color: $color1;
     @include flexing();
  }
+
+ @media screen and (max-width: 1199px) {
+    footer {
+      font-size: 13px;
+      .footer-div {
+        flex-direction: column;
+      }
+    }
+}
