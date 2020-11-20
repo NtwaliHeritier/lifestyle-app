@@ -47,7 +47,7 @@
                 <table>
                     <tr>
                     <%if user_signed_in?%>
-                        <td><%=current_user.username.capitalize%></td>
+                        <td><%=link_to current_user.username.capitalize, edit_user_registration_path(current_user)%></td>
                         <td>
                         <%=link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "link"%>
                         </td>

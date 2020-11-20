@@ -6,16 +6,18 @@ class CategoriesController < ApplicationController
     def create
         @category = Category.new(create_params)
         @category.name = params[:category][:name].capitalize
-        unless @category.save
+        categ=Category.category_exists(@category.name)
+        if categ.exists?
             render :new
         else
+            @category.save
             redirect_to root_path            
         end
     end
 
     def index
-        @categories = Category.all.order(priority: :asc).limit(4)
-        @voted_post = Post.find_by_sql("select p.* from posts p join votes v on p.id=v.post_id group by p.id order by count(v.id) desc;").first
+        @categories = Category.all.order(priority: :desc).limit(4)
+        @voted_post = Post.get_most_votes
 
     end
 

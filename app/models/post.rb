@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :votes
   mount_uploader :image, ImageUploader
 
+  scope :get_most_votes, -> { joins(:votes).group('posts.id').order('count(votes.id) desc').first }
+
   def category; end
 
   def category=(categories_array)
