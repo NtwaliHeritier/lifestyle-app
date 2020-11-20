@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
     end
 
     def index
-        @categories = Category.all.order(priority: :desc).limit(4)
+        @categories = Category.all.order(priority: :asc).limit(4)
         @voted_post = Post.get_most_votes
 
     end
