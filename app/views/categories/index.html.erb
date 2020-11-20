@@ -1,6 +1,6 @@
 <main>
         <section class="most-voted">
-            <%if @voted_post.exists?%>
+            <%unless @voted_post.nil?%>
                 <%=link_to post_path(@voted_post) do%>
                     <img src="<%=@voted_post.image%>" alt="">
                     <div class="most-voted-content">
