@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   def category; end
 
   def category=(categories_array)
-    categories=categories_array.collect{|c| Category.find_by(name: c)}
-    self.categories=categories
+    categories = categories_array.collect { |c| Category.find_by(name: c) }
+    self.categories = categories
   end
 end

@@ -14,5 +14,5 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   CarrierWave.configure do |config|
     config.cache_storage = :file
-   end
+  end
 end
