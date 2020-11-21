@@ -1,60 +1,64 @@
 $color1: #da5401;
 
 @mixin flexing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .category-item {
-    display: flex; 
-    flex-wrap: wrap;
-    h5 {
-        color: $color1;
-    }
+  display: flex;
+  flex-wrap: wrap;
+
+  h5 {
+    color: $color1;
+  }
 }
 
 footer {
-    background-color: #4d423c;
-    color: white;
+  background-color: #4d423c;
+  color: white;
 }
 
 .footer-logo {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .footer-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-links a {
-    padding: 3px;
-    color: $color1;
-    &:hover {
-        text-decoration: none;
-    }
+  padding: 3px;
+  color: $color1;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .social-media {
-   @include flexing();
+  @include flexing();
 }
 
 .social-media-icon {
-    margin: 5px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: $color1;
-    @include flexing();
- }
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $color1;
 
- @media screen and (max-width: 1199px) {
-    footer {
-      font-size: 13px;
-      .footer-div {
-        flex-direction: column;
-      }
+  @include flexing();
+}
+
+@media screen and (max-width: 1199px) {
+  footer {
+    font-size: 13px;
+
+    .footer-div {
+      flex-direction: column;
     }
+  }
 }

@@ -1,100 +1,101 @@
 .my-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(180deg,rgba(77, 66, 60, 0.3) 0%,rgba(77, 66, 60, 0.9) 96%), url(/assets/writing.png);
-    background-repeat: no-repeat;
-    background-position: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(77, 66, 60, 0.3) 0%, rgba(77, 66, 60, 0.9) 96%), url(/assets/writing.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .img img {
-    width: 50%;
+  width: 50%;
 }
 
 .my-form {
-    box-shadow: 0px 0px 9px 8px rgba(0,0,0,0.32);
-    width: 35%;
-    background-color: rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    height: 60vh;
+  box-shadow: 0 0 9px 8px rgba(0, 0, 0, 0.32);
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  height: 60vh;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .input {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    padding-left: 20px;
-    width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .button {
-    border: none;
-    border-radius: 20px;
-    color: black;
-    background-color: #b5b1af;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  background-color: #b5b1af;
 }
 
 .inputs {
-    position: relative;
-    margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .inputs i {
-    position: absolute;
-    top: 35%;
-    left: 4%;
-    margin-bottom: 10px;
+  position: absolute;
+  top: 35%;
+  left: 4%;
+  margin-bottom: 10px;
 }
 
 .accounts {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-    .my-form {
-        width: 60%;
-    }
-   
-    .accounts a {
-        font-size: 13px;
-    }
+  .my-form {
+    width: 60%;
+  }
 
-    .my-form, .story {
-        height: 65vh;
-    }
+  .accounts a {
+    font-size: 13px;
+  }
 
-    .img img {
-        width: 30%;
-    }
+  .my-form,
+  .story {
+    height: 65vh;
+  }
+
+  .img img {
+    width: 30%;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .my-form {
-        width: 75%;
-    }
+  .my-form {
+    width: 75%;
+  }
 
-    .accounts a {
-        font-size: 12px;
-    }
+  .accounts a {
+    font-size: 12px;
+  }
 
-    .img img {
-        width: 40%;
-    }
+  .img img {
+    width: 40%;
+  }
 }

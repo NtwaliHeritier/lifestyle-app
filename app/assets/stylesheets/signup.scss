@@ -1,78 +1,75 @@
 .signup-content {
-    background: linear-gradient(180deg,rgba(77, 66, 60, 0.3) 0%,rgba(77, 66, 60, 0.9) 96%), url(/assets/reading.png);
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2em 0 3em;
-    height: 100vh;
+  background: linear-gradient(180deg, rgba(77, 66, 60, 0.3) 0%, rgba(77, 66, 60, 0.9) 96%), url(/assets/reading.png);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em 0 3em;
+  height: 100vh;
 }
 
 .signup-form-container {
-    width: 50%;
-    box-shadow: 0px 0px 9px 8px rgba(0,0,0,0.32);
-    background-color: transparent;
-    padding: 20px;
+  width: 50%;
+  box-shadow: 0 0 9px 8px rgba(0, 0, 0, 0.32);
+  background-color: transparent;
+  padding: 20px;
 }
 
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .signup-input-flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signup-input-flex input {
-    width: 49%;
-    text-indent: 20px;
-    border-radius: 20px;
+  width: 49%;
+  text-indent: 20px;
+  border-radius: 20px;
 }
 
 .signup-input {
-    width: 100%;
-    text-indent: 20px;
-    border-radius: 20px;
+  width: 100%;
+  text-indent: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .signup-inputs span {
-    font-size: 18px;
-    color: #767676;
+  font-size: 18px;
+  color: #767676;
 }
 
 .signup-button {
-    border-radius: 20px;
-}
-
-.signup-input{
-    background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
 }
 
 .anchors p {
-    display: block;
-    text-align: center;
-    font-size: 18px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
 }
 
 .button {
-    background-color:#eae9e8;
+  background-color: #eae9e8;
 }
 
 .anchors a {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 1023px) and (min-width: 768px) {
-    .signup-form-container {
-        width: 60%;
-    }
+  .signup-form-container {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 767px) {
-   .signup-form-container {
-       width: 80%;
-   }
+  .signup-form-container {
+    width: 80%;
+  }
 }
