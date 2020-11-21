@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       @categories = Category.all
-      flash.now = "Choose a category"
+      flash.now = 'Choose a category'
       render :new
     end
   end
