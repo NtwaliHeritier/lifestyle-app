@@ -63,3 +63,5 @@ Style/StringLiterals:
   Enabled: false
 Lint/LiteralInInterpolation:
   Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
