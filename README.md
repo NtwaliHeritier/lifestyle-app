@@ -1,4 +1,4 @@
-# Project :  social media
+# Project :  INFOX
 In this project I built a blog-like web application using ruby on rails.
 
 ## Built-With

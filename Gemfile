@@ -40,6 +40,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 4.0'
   # The RSpec testing framework
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -51,6 +52,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'database_cleaner', '~> 1.7'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
