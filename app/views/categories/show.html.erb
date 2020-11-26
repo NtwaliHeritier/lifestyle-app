@@ -3,7 +3,7 @@
           <%@category.posts.each do |post|%>
             <div class="item">
             <img src="<%=post.image%>" class=<%="order-2" if i%4==3 || i%4==0%> alt="">
-            <div class="item-content p-2 <%="order-1" if i%4==3 || i%4==0%>">
+            <div class="item-content p-2 ml-2 <%="order-1" if i%4==3 || i%4==0%>">
                 <span class="category"><%=@category.name%></span>
                 <span class="title"><%=post.title%></span>
                 <p><%=truncate(post.body, length: 100, omission: '...')%> <%=link_to "Read more", post_path(post)%></p>

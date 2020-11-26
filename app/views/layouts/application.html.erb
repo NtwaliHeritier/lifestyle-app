@@ -60,6 +60,16 @@
             </div>
         </nav>
     </header>
+    <%if flash[:alert]%>
+        <div class="text-center font-weight-bold text-info">
+            <%= flash[:alert] %>
+        </div>
+    <%end%>
+    <%if flash[:notice]%>
+        <div class="text-center font-weight-bold text-primary">
+            <%= flash[:notice] %>
+        </div>
+    <%end%>
     <%= yield %>
     <footer class="p-3 text-white mt-auto">
         <div class="footer-div">
