@@ -1,29 +1,22 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<main class="signup-content">
+        <div class="signup-form-container">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signup-form", autocomplete: 'off'}) do |f|%>
+                <div class="signup-input-flex">
+                    <%=f.text_field :first_name, placeholder: "first name", class: "py-2 my-2"%>
+                    <%=f.text_field :last_name, placeholder: "last name", class: "py-2 my-2"%>
+                </div>
+                <div class="signup-input-flex">
+                    <%=f.email_field :email, placeholder: "email", class: "py-2 my-2"%>
+                    <%=f.text_field :username, placeholder: "username", class: "py-2 my-2"%>
+                </div>
+                <div class="signup-input-flex">
+                    <%=f.password_field :password, placeholder: "password", class: "py-2 my-2"%>
+                    <%=f.password_field :password_confirmation, placeholder: "confirm password", class: "py-2 my-2"%>
+                </div>
+                <%=f.submit "Sign Up", class: "py-2 my-4 font-weight-bold signup-button border-0"%>
+            <%end%>
+            <div class="signup-anchors">
+                <p class="text-white">Already have an account? <%=link_to "LOGIN", new_user_session_path, class: "font-weight-bold text-white"%>
+            </div>
+        </div>
+    </main>

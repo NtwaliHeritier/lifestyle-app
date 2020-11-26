@@ -1,0 +1,26 @@
+<main>
+        <section class="most-voted">
+            <%if Vote.exists?%>
+                <%=link_to post_path(@voted_post) do%>
+                    <img src="<%=@voted_post.image%>" alt="">
+                    <div class="most-voted-content">
+                        <h5 class="font-weight-bold text-white bg-dark"><%=@voted_post.title%></h5>
+                    </div>
+                <%end%>
+            <%end%>
+        </section>
+        
+        <section class="categories">
+            <%@categories.each do |category|%>
+            <div class="category">
+                <%if category.posts.exists?%>
+                    <%=link_to category_path(category) do%>
+                        <img src="<%=category.posts.last.image%>" alt="">
+                        <h6 class="text-white p-2 font-weight-bold bg-dark"><%=category.name%></h6>
+                        <p class="font-weight-bold bg-dark"><%=truncate(category.posts.last.title.capitalize, length: 40, omission: '...')%></p>
+                    <%end%>
+                <%end%>
+            </div>
+            <%end%>
+        </section>
+    </main>

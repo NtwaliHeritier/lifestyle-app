@@ -1,0 +1,26 @@
+<main>
+       <section class="post-section">
+        <div class="img-div">
+            <img src="<%=@post.image%>", height="40%" width="40%">
+        </div>
+        <div class="mt-5 post-flex">
+            <div class="d-flex justify-content-between user px-5">
+                <span>By <%=@post.user.username.capitalize%></span>
+                <div class="d-flex justify-content-between votes">
+                    <%unless Vote.post_vote(@post, current_user).exists?%>
+                        <%= form_for(@vote) do |f|%>
+                        <%=f.hidden_field(:post_id, value: @post.id)%>
+                        <%=f.hidden_field(:post, value: @post)%>
+                        <%=f.button "submit", class: "save-button" do%>
+                            <%=fa_icon("thumbs-up")%>
+                        <%end%>
+                        <%end%>
+                    <%end%>
+                    <span><%=@post.votes.size%> <%=check_votes(@post.votes.size)%></span>
+                </div>
+            </div>
+            <h3 class="text-center font-weight-bold"><%=@post.title%></h3>
+            <p class="mt-4"><%=@post.body%></p>
+        </div>
+       </section>
+    </main>

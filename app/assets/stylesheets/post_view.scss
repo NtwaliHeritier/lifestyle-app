@@ -1,0 +1,33 @@
+.post-section {
+  max-width: 90%;
+  min-width: 90%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+
+  .img-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    width: 100%;
+  }
+}
+
+.post-flex,
+.post-flex .user {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.votes {
+  width: 8%;
+
+  .save-button {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+  }
+}

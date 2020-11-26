@@ -1,0 +1,26 @@
+<main class="post-content">
+        <div class="post-form-container">
+            <%=form_for(@post, html: {class: "post-form"}) do |f|%>
+                <div class="post-input-flex">
+                    <%=f.text_field :title, placeholder: "title", class: "py-2 my-2 post-input"%>
+                </div>
+                <div class="post-input-flex">
+                    <%=f.text_area :body, placeholder: "Insert article", class: "py-2 my-2 post-input"%>
+                </div>
+                <div class="post-input-flex">
+                    <%= f.hidden_field :image_cache %>
+                    <%= f.file_field :image, class: "py-2 my-2 post-input"%>
+                </div>
+                <span class="text-center text-white d-block categ-title my-3">Categories</span>
+                <div class="categories">
+                    <%@categories.each do |c|%>
+                        <div class="category">
+                            <%=f.check_box("category", {multiple: true}, c.name, nil)%>
+                            <%=f.label "category", c.name, class: "text-white"%>
+                        </div>
+                    <%end%>   
+                </div>
+                <%=f.submit "Create Post", class: "py-2 my-4 font-weight-bold post-button border-0"%>
+            <%end%>
+        </div>
+    </main>

@@ -7,11 +7,85 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/16d2250538.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+  <body class="d-flex flex-column min-vh-100">
+  <header class="px-2">
+        <nav class="nav">
+            <span class="nav-logo">
+            <%=link_to "INFOX", root_path%>
+            </span>
+            <div class="nav-links">
+                <%if user_signed_in?%>
+                    <div class="dropdown show">
+                        <a class="dropdown-toggle link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-plus"></i>
+                            CREATE
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <%=link_to "New post", new_post_path, class: "dropdown-item"%>
+                            <%=link_to "New category", new_category_path, class: "dropdown-item"%>
+                        </div>
+                        </div>
+                        <div class="dropdown show">
+                        <a class="dropdown-toggle link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CATEGORIES
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <%Category.all.each do |category|%>
+                                <%=link_to category.name, category_path(category), class: "dropdown-item"%>
+                            <%end%>
+                        </div>
+                        </div>
+                <%end%>
+            </div>
+            <div class="nav-login">
+                <table>
+                    <tr>
+                    <%if user_signed_in?%>
+                        <td><%=link_to current_user.username.capitalize, edit_user_registration_path(current_user)%></td>
+                        <td>
+                        <%=link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "link"%>
+                        </td>
+                    <%else%>
+                        <td><%=link_to "LOGIN", new_user_session_path, class: "link"%></td> 
+                        <td><%=link_to "REGISTER", new_user_registration_path, class: "link"%></td> 
+                    <%end%>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+    </header>
+    <%if flash[:alert]%>
+        <div class="text-center font-weight-bold text-info">
+            <%= flash[:alert] %>
+        </div>
+    <%end%>
+    <%if flash[:notice]%>
+        <div class="text-center font-weight-bold text-primary">
+            <%= flash[:notice] %>
+        </div>
+    <%end%>
     <%= yield %>
+    <footer class="p-3 text-white mt-auto">
+        <div class="footer-div">
+            <span class="footer-logo font-weight-bold text-white">INFOX</span>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <span class="text-white">Copyright 2020. All rights reserved.</span>
+            </div>
+            <div class="social-media">
+                <span class="text-white">Connect with us: </span>
+                  <div class="social-media-icon"><i class="fab fa-twitter"></i></div>
+                  <div class="social-media-icon"><i class="fab fa-instagram"></i></div>
+                  <div class="social-media-icon"><i class="fab fa-facebook-f"></i></div>
+            </div>
+        </div>
+    </footer>
   </body>
 </html>

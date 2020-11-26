@@ -1,0 +1,78 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em 0 3em;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(77, 66, 60, 0.3) 0%, rgba(77, 66, 60, 0.9) 96%), url(/assets/category.png);
+  background-repeat: no-repeat;
+}
+
+.form-container {
+  width: 50%;
+  box-shadow: 0 0 9px 8px rgba(0, 0, 0, 0.32);
+  background-color: transparent;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.input-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-flex input {
+  width: 49%;
+  text-indent: 20px;
+  border-radius: 20px;
+}
+
+.inputs input,
+.inputs select {
+  width: 100%;
+  text-indent: 20px;
+  border-radius: 20px;
+}
+
+.inputs span {
+  font-size: 18px;
+  color: #767676;
+}
+
+button {
+  border-radius: 20px;
+}
+
+.anchors p {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.button {
+  background-color: #eae9e8;
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .form-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-container {
+    width: 80%;
+  }
+}

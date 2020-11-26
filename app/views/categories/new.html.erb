@@ -1,0 +1,11 @@
+<main class="content">
+        <div class="form-container">
+            <%=form_for @category do |f|%>
+                <div class="input-flex">
+                    <%=f.text_field :name, placeholder: "Name", class: "py-2 my-2"%>
+                    <%=f.number_field :priority, placeholder: "Priority", class: "py-2 my-2"%>
+                </div>
+                <%=f.submit "Create Category", class: "py-2 my-4 font-weight-bold button border-0"%>
+            <%end%>
+        </div>
+    </main>
